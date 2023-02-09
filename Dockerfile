@@ -1,4 +1,4 @@
-FROM debian:bullseye as assets
+FROM debian:11 as assets
 
 # This Dockerfile facilitates bleeding edge development docker image builds
 # directly from source. To build a development image, run `make docker`.
@@ -14,7 +14,7 @@ RUN	apt update && apt install wget -y && \
  	wget -q https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz && \
 	wget -q https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tar.xz
 
-FROM debian:bullseye
+FROM debian:11
 
 ARG GO_VERSION=1.16
 ARG PYTHON_VERSION=3.7.13
